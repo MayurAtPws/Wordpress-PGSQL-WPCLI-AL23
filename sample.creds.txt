@@ -1,0 +1,49 @@
+# This is a sample credential file. Not for production use!
+
+# postgre linux user
+
+username : postgres
+passwd : Admin@123#
+
+# Admin db passwd
+passwd : Admin@123#
+
+ psql -c "ALTER USER postgres WITH PASSWORD 'Admin@123#';"
+
+# New db user 
+uname : wpuser
+passwd : Wp@123#
+
+CREATE USER wpuser WITH PASSWORD 'Wp@123#';
+
+# NewDB
+name : wpdb
+
+CREATE DATABASE wpdb;
+
+GRANT ALL PRIVILEGES ON DATABASE wpdb TO wpuser;
+GRANT ALL PRIVILEGES ON SCHEMA public TO wpuser;
+ALTER SCHEMA public OWNER TO wpuser;
+ALTER DATABASE wpdb OWNER TO wpuser;
+
+
+
+
+# Wp-Config
+
+/** The name of the database for WordPress */
+define('DB_NAME', 'wpdb');
+/** MySQL database username */
+define('DB_USER', 'wpuser');
+/** MySQL database password */
+define('DB_PASSWORD', 'Wp@123#');
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
+
+
+#WP Credentials
+uname : Admin99
+passwd : Qwerty@1223# 
+
+
+
